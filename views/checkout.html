@@ -5,8 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>Title</title>
+
+
+    <link href="reset.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="checkout.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+<header>
+    <nav>
+        <ul>
+            <li>
+                LOGGA IN
+            </li>
+            <li>
+                REGISTRERA KONTO
+            </li>
+        </ul>
 
+    </nav>
+    <div class="searchdiv">
+        <form class="searchform">
+            <input class="searchbar" type="text" name="search" placeholder="Sök..">
+        </form>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                PRODUKTER
+            </li>
+            <li>
+                TILL KASSAN
+            </li>
+        </ul>
+
+    </nav>
+</header>
+<main>
+    <section>
+        <form method="post" action="/register">
+            <label>Namn</label>
+            <input type="text" name="Namn"  placeholder="Förnamn"
+                   title="Får endast innehålla bokstäver" required>
+
+
+            <label>Efternamn</label>
+            <input type="text" name="Efternamn" placeholder="Efternamn"
+                   title="Får endast innehålla bokstäver" required>
+
+            <label>Email</label>
+            <input type="email" name="Mailadress"  placeholder="Email"
+                   title="Ange en giltig emailadress" required>
+
+            <label>Telefonnummer</label>
+            <input type="text" name="Telefonnummer" placeholder="Telefonnummer"
+                   title="Får endast innehålla siffror">
+
+
+            <label>Gatuadress</label>
+            <input type="text" name="Gatuadress"  placeholder="Gatuadress"
+                   title="Får endast innehålla bokstäver och siffror" required>
+
+
+            <label>Postnummer</label>
+            <input type="text" name="Postnummer" placeholder="Postnummer"
+                   title="Får endast innehålla siffror" required>
+
+            <label>Stad</label>
+            <input type="text" name="Stad"  placeholder="Stad"
+                   title="Får endast innehålla bokstäver" required>
+
+            <label>Kommentar</label>
+            <textarea name="comment">Enter text here...</textarea>
+
+            <div class="submit"><input type="submit"></div>
+
+        </form>
+
+    </section>
+</main>
+
+
+
+<script src="../scripts/index.js"></script>
 </body>
 </html>
