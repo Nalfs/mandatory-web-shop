@@ -45,37 +45,41 @@
 <main>
     <section>
         <form method="post" action="/register">
-            <label>Namn</label>
-            <input type="text" name="Namn"  placeholder="Förnamn"
-                   title="Får endast innehålla bokstäver" required>
-
-
-            <label>Efternamn</label>
-            <input type="text" name="Efternamn" placeholder="Efternamn"
-                   title="Får endast innehålla bokstäver" required>
-
-            <label>Email</label>
-            <input type="email" name="Mailadress"  placeholder="Email"
-                   title="Ange en giltig emailadress" required>
-
-            <label>Telefonnummer</label>
-            <input type="text" name="Telefonnummer" placeholder="Telefonnummer"
-                   title="Får endast innehålla siffror">
-
-
-            <label>Gatuadress</label>
-            <input type="text" name="Gatuadress"  placeholder="Gatuadress"
-                   title="Får endast innehålla bokstäver och siffror" required>
-
-
-            <label>Postnummer</label>
-            <input type="text" name="Postnummer" placeholder="Postnummer"
-                   title="Får endast innehålla siffror" required>
-
-            <label>Stad</label>
-            <input type="text" name="Stad"  placeholder="Stad"
-                   title="Får endast innehålla bokstäver" required>
-
+            <div class="name">
+                <label for="name" class="required">Namn</label>
+                <input type="text" name="Namn"  placeholder="Förnamn"
+                       title="Får endast innehålla bokstäver" id="name" required>
+            </div>
+            <div class="efternamn">
+                <label for="efternamn" class="required">Efternamn</label>
+                <input type="text" name="Efternamn" placeholder="Efternamn"
+                       title="Får endast innehålla bokstäver" required id="efternamn">
+            </div>
+            <div class="email">
+                <label for="email" class="required">Email</label>
+                <input type="email" name="email"  placeholder="Email"
+                       title="Ange en giltig emailadress" required id="email">
+            </div>
+            <div class="telefonnummer">
+                <label for="telefonnummer" class="required">Telefonnummer</label>
+                <input type="text" name="Telefonnummer" placeholder="Telefonnummer"
+                       title="Får endast innehålla siffror" id="telefonnummer">
+            </div>
+            <div class="gatuadress">
+            <label for="gatuadress" class="required">Gatuadress</label>
+                <input type="text" name="Gatuadress"  placeholder="Gatuadress"
+                       title="Får endast innehålla bokstäver och siffror" required id="gatuadress">
+            </div>
+            <div class="postnummer">
+                <label for="postnummer" class="required">Postnummer</label>
+                <input type="text" name="Postnummer" placeholder="Postnummer"
+                       title="Får endast innehålla siffror" required id="postnummer">
+            </div>
+            <div class="stad">
+                <label for="stad" class="required">Stad</label>
+                <input type="text" name="Stad"  placeholder="Stad"
+                       title="Får endast innehålla bokstäver" required id="stad">
+            </div>
             <label>Kommentar</label>
             <textarea name="comment">Enter text here...</textarea>
 

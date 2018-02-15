@@ -44,7 +44,7 @@ showProductList(arrProducts[i].productName,arrProducts[i].productPrice, arrProdu
         let isFormValid;
 
         //perform generic checks(calls functions outside the event handler)
-        for (let i = 0, 1 = (elements.length -1); i < 1; i++) {
+        for (let i = 0, l = (elements.length -1); i < l; i++) {
             isValid = validateRequired(elements[i]) && validateTypes(elements[i]);
             if (!isValid) {
                 showErrorMessage(elements[i]);
@@ -67,7 +67,7 @@ showProductList(arrProducts[i].productName,arrProducts[i].productPrice, arrProdu
         if (!isFormValid) {
             e.preventDefault();
         }
-    })
+    });
     ...
 }());
 
@@ -111,4 +111,33 @@ function showErrorMessage(el) {
     }
     $errorContainer.text($(el).data('errorMessage'));
 }
+
+function validateTypes(el) {
+    if (!el.value) return true;
+
+    let type = $(el).data('type') || el.getAttribute('type');
+    if (typeof validateType[type] === 'function') {
+        return validateType[type](el);
+    } else {
+        return true;
+    }
+}
+
+//validating data types using an object
+
+let validateType = {
+    email: function(el) {
+        let valid = / [^@]+@[^@]+/.test(el.value);
+        if (!valid) {
+            setErrorMessage(el, 'Please enter a valid email');
+        }
+        return valid;
+    },
+    firstName: function(el) {
+
+    },
+    lastName: function(el) {
+
+    }
+};
 
