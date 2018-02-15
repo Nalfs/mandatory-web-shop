@@ -42,23 +42,27 @@
 
     </nav>
 </header>
+
 <main>
     <section>
-        <form method="post" action="/register">
+        <form id="frmUserInfo" action="#">
             <div class="name">
-                <label for="name" class="required">Namn</label>
+                <label for="namn" class="required">Namn</label>
                 <input type="text" name="Namn"  placeholder="Förnamn"
-                       title="Får endast innehålla bokstäver" id="name" required>
+                       title="Får endast innehålla bokstäver" id="namn">
+                 <span id="errName" class="error">Detta är ett obligatoriskt fält.</span>
             </div>
             <div class="efternamn">
                 <label for="efternamn" class="required">Efternamn</label>
                 <input type="text" name="Efternamn" placeholder="Efternamn"
-                       title="Får endast innehålla bokstäver" required id="efternamn">
+                       title="Får endast innehålla bokstäver"  id="efternamn">
+                <span id="errLast" class="error">Detta är ett obligatoriskt fält.</span>
             </div>
             <div class="email">
                 <label for="email" class="required">Email</label>
                 <input type="email" name="email"  placeholder="Email"
-                       title="Ange en giltig emailadress" required id="email">
+                       title="Ange en giltig emailadress"  id="email">
+                <span id="errEmail" class="error">Detta är ett obligatoriskt fält.</span>
             </div>
             <div class="telefonnummer">
                 <label for="telefonnummer" class="required">Telefonnummer</label>
@@ -80,10 +84,10 @@
                 <input type="text" name="Stad"  placeholder="Stad"
                        title="Får endast innehålla bokstäver" required id="stad">
             </div>
-            <label>Kommentar</label>
-            <textarea name="comment">Enter text here...</textarea>
+            <label for="comment" class="required">Kommentar</label>
+            <textarea name="comment" id="comment">Enter text here...</textarea>
 
-            <div class="submit"><input type="submit"></div>
+            <button id="btnSubmit" type="button">Submit</button>
 
         </form>
 

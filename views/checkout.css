@@ -41,3 +41,20 @@ main > section > form > div > input[type=text], input[type=email], textarea {
     margin: 8px 0;
     box-sizing: border-box;
 }
+
+label[class="required"] {
+   color: #b95419;
+}
+
+button{
+    width:80px;
+    height:30px;
+    margin:20px;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+    font-size: 10px;
+    visibility: hidden;
+}
