@@ -14,52 +14,51 @@
 </head>
 <body>
 <header>
+
     <nav>
         <ul>
             <li>
-                LOGGA IN
+                <figure><img src="login.png" alt="loginIkon"> LOGGA IN/ REGISTRERA KONTO</figure>
             </li>
             <li>
-                REGISTRERA KONTO
+                <figure><img src="speech.png" alt="speechIkon"> KUNDSERVICE</figure>
+            </li>
+
+            <li>
+                <a href="product.html">PRODUKTER</a>
+            </li>
+            <li>
+                <figure><img src="cart.png" alt="speechIkon"><a href="checkout.html"> TILL KASSAN (0)</a></figure>
             </li>
         </ul>
-
     </nav>
+
+</header>
+<nav id="searching">
     <div class="searchdiv">
         <form class="searchform">
             <input class="searchbar" type="text" name="search" placeholder="Sök..">
         </form>
     </div>
-    <nav>
-        <ul>
-            <li>
-                PRODUKTER
-            </li>
-            <li>
-                TILL KASSAN
-            </li>
-        </ul>
-
-    </nav>
-</header>
+</nav>
 
 <main>
     <section>
         <form id="frmUserInfo" action="#">
             <div class="name">
-                <label for="namn" class="required">Namn</label>
+                <label for="namn" class="required">Namn*<span class="reqForm">(Minst 3 bokstäver)</span></label>
                 <input type="text" name="Namn"  placeholder="Förnamn"
-                       title="Får endast innehålla bokstäver" id="namn">
+                       title="Namn" id="namn">
                  <span id="errName" class="error">Detta är ett obligatoriskt fält.</span>
             </div>
             <div class="efternamn">
-                <label for="efternamn" class="required">Efternamn</label>
+                <label for="efternamn" class="required">Efternamn*<span class="reqForm">(Minst 3 bokstäver)</span></label>
                 <input type="text" name="Efternamn" placeholder="Efternamn"
                        title="Får endast innehålla bokstäver"  id="efternamn">
                 <span id="errLast" class="error">Detta är ett obligatoriskt fält.</span>
             </div>
             <div class="email">
-                <label for="email" class="required">Email</label>
+                <label for="email" class="required">Email*<span class="reqForm">(Minst 5 bokstäver)</span></label>
                 <input type="email" name="email"  placeholder="Email"
                        title="Ange en giltig emailadress"  id="email">
                 <span id="errEmail" class="error">Detta är ett obligatoriskt fält.</span>
@@ -70,19 +69,21 @@
                        title="Får endast innehålla siffror" id="telefonnummer">
             </div>
             <div class="gatuadress">
-            <label for="gatuadress" class="required">Gatuadress</label>
-                <input type="text" name="Gatuadress"  placeholder="Gatuadress"
-                       title="Får endast innehålla bokstäver och siffror" required id="gatuadress">
+            <label for="gatuadress" class="required">Gatuadress*<span class="reqForm">(Minst 4 bokstäver)</span></label>
+                <input type="text" name="gatuadress"  placeholder="Gatuadress"
+                       title="Får endast innehålla bokstäver och siffror"  id="gatuadress">
+                <span id="errGat" class="error">Detta är ett obligatoriskt fält.</span>
             </div>
             <div class="postnummer">
                 <label for="postnummer" class="required">Postnummer</label>
                 <input type="text" name="Postnummer" placeholder="Postnummer"
-                       title="Får endast innehålla siffror" required id="postnummer">
+                       title="Får endast innehålla siffror"  id="postnummer">
             </div>
             <div class="stad">
-                <label for="stad" class="required">Stad</label>
-                <input type="text" name="Stad"  placeholder="Stad"
-                       title="Får endast innehålla bokstäver" required id="stad">
+                <label for="stad" class="required">Stad*<span class="reqForm">(Minst 3 bokstäver)</span></label>
+                <input type="text" name="stad"  placeholder="Stad"
+                       title="Får endast innehålla bokstäver"  id="stad">
+                <span id="errCity" class="error">Detta är ett obligatoriskt fält.</span>
             </div>
             <label for="comment" class="required">Kommentar</label>
             <textarea name="comment" id="comment">Enter text here...</textarea>

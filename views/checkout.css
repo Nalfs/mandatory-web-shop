@@ -16,6 +16,12 @@ main > section {
 
 }
 
+.reqForm {
+    font-style: italic;
+    font-size: 10px;
+    margin: 5px;
+}
+
 form {
     padding: 20px;
     text-align: left;
