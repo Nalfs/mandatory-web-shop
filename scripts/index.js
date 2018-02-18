@@ -21,21 +21,27 @@ btnSubmit.addEventListener("click",function () {
 
     if (uFirstname.value === '' || uFirstname.value.length < 3){
         errName.setAttribute("style", "visibility:visible");
+        return false;
 
     }if(uLastname.value === '' || uLastname.value.length < 3){
         errLast.setAttribute("style", "visibility:visible");
+        return false;
 
     }if((uEmail.value === '' || uEmail.value.length < 5 || !emailPattern.test(uEmail.value))){
         errEmail.setAttribute("style", "visibility:visible");
+        return false;
 
     }if((uStreetAdress.value === '' || uStreetAdress.value.length < 4 || !zipPattern.test(uStreetAdress.value))) {
         errGat.setAttribute("style", "visibility:visible");
+        return false;
 
     }if(uCity.value === '' || uCity.value.length < 3) {
         errCity.setAttribute("style", "visibility:visible");
+        return false;
 
     }if((uzipCode.value === '' || uzipCode.value.length < 3 || !zipPattern.test(uzipCode.value))){
             errZip.setAttribute("style", "visibility:visible");
+        return false;
 
     }else{
         document.getElementById("frmUserInfo").submit();
