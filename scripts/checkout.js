@@ -21,29 +21,40 @@ btnSubmit.addEventListener("click",function () {
 
     if (uFirstname.value === '' || uFirstname.value.length < 3){
         errName.setAttribute("style", "visibility:visible");
+        uFirstname.focus();
+        return false;
 
-
-    }if(uLastname.value === '' || uLastname.value.length < 3){
+    }else if(uLastname.value === '' || uLastname.value.length < 3){
         errLast.setAttribute("style", "visibility:visible");
+        uLastname.focus();
+        return false;
 
 
-    }if((uEmail.value === '' || uEmail.value.length < 5 || !emailPattern.test(uEmail.value))){
+    }else if((uEmail.value === '' || uEmail.value.length < 5 || !emailPattern.test(uEmail.value))){
         errEmail.setAttribute("style", "visibility:visible");
+        uEmail.focus();
+        return false;
 
 
-    }if((uStreetAdress.value === '' || uStreetAdress.value.length < 4 || !zipPattern.test(uStreetAdress.value))) {
+    }else if((uStreetAdress.value === '' || uStreetAdress.value.length < 4 || !zipPattern.test(uStreetAdress.value))) {
         errGat.setAttribute("style", "visibility:visible");
+        uStreetAdress.focus();
+        return false;
 
 
-    }if(uCity.value === '' || uCity.value.length < 3) {
+    }else if(uCity.value === '' || uCity.value.length < 3) {
         errCity.setAttribute("style", "visibility:visible");
+        uCity.focus();
+        return false;
 
 
-    }if((uzipCode.value === '' || uzipCode.value.length < 3 || !zipPattern.test(uzipCode.value))){
-            errZip.setAttribute("style", "visibility:visible");
+    }else if((uzipCode.value === '' || uzipCode.value.length < 3 || !zipPattern.test(uzipCode.value))) {
+        errZip.setAttribute("style", "visibility:visible");
+        uzipCode.focus();
+        return false;
 
 
-    }else{
+}else{
         document.getElementById("frmUserInfo").submit();
     }
 });
