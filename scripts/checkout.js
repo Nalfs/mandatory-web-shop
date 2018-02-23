@@ -83,10 +83,10 @@ function loadItems() {
         let price = document.createElement("footer");
         let image = document.createElement("img");
 
-        heading.innerHTML = product.name;
-        image.setAttribute("src", product.image);
-        description.innerHTML = product.description;
-        price.innerHTML = `${product.price} SEK`;
+        heading.innerHTML = product.productName;
+        image.setAttribute("src", product.productImageUrl);
+        description.innerHTML = product.productDescription;
+        price.innerHTML = `${product.productPrice} SEK`;
 
         productCard.appendChild(heading);
         productCard.appendChild(image);
