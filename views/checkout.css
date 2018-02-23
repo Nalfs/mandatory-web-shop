@@ -39,6 +39,10 @@ main {
 
 }
 
+#cart-items {
+    color: white;
+}
+
 main > section > form > div > input[type=text], input[type=email], textarea {
     width:100%;
     padding: 6px 10px;
@@ -46,6 +50,7 @@ main > section > form > div > input[type=text], input[type=email], textarea {
     border-radius: 3px;
     margin: 8px 0;
     box-sizing: border-box;
+
 }
 
 label[class="required"] {
@@ -63,4 +68,10 @@ button{
     font-style: italic;
     font-size: 10px;
     visibility: hidden;
+}
+
+#headerColor {
+     font-size: 1.17em;
+    font-weight: bold;
+    color: white;
 }

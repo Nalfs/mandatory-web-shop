@@ -13,11 +13,11 @@ function showProductList(Name, Price, Description, ImageUrl, Id) {
 
     htmlContent += "<div class='productItem'>";
     htmlContent += "<span>" + Name + "</span>" + "<br>";
-    htmlContent += "Produkt Id #" + Id + "<br>";
+    htmlContent += "Art:" + Id + "<br>";
     htmlContent += "<p>" + Price + "</p>";
     htmlContent += Description + "<br>";
     htmlContent += '<img src="' + ImageUrl + '" class="product-image">' + "<br>";
-    htmlContent += '<button class="product-btn" id="btnBuy">' + "KÖP";
+    htmlContent += '<button class="product-btn" data-product-id="' + Id + '">' + "KÖP";
     htmlContent += "</button>";
     htmlContent += "</p></div>";
 
@@ -38,3 +38,11 @@ for (let i = 0; i < arrProducts.length; i++){
 }
 
 
+
+function getProductFromId(id) {
+    for (let product of arrProducts) {
+        if (product.productId == id) {
+            return product;
+        }
+    }
+}
