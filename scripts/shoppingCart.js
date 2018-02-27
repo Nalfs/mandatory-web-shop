@@ -1,6 +1,4 @@
 
-
-
 function addToCart(productId) {
     let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     let show = cartItems.length;

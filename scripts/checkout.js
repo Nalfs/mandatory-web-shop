@@ -7,6 +7,13 @@ let uCity = document.getElementById("stad");
 let uzipCode = document.getElementById("zip");
 let btnSubmit = document.getElementById("btnSubmit");
 
+let cart = document.getElementById("cart-items");
+
+
+let ids = [], ocurrences = [], itemId = [],  prev;
+
+
+
 
 btnSubmit.addEventListener("click",function () {
 
@@ -59,43 +66,71 @@ btnSubmit.addEventListener("click",function () {
     }
 });
 
+function displayCart(product) {
+    let productCard = document.createElement("article");
+    let heading = document.createElement("h3");
+    let description = document.createElement("p");
+    let price = document.createElement("footer");
+    let image = document.createElement("img");
+    let quantityOutput = document.createElement("span");
+    let quantity = 0;
 
+    heading.innerHTML = product.productName;
+    image.setAttribute("src", product.productImageUrl);
+    description.innerHTML = product.productDescription;
+    price.innerHTML = `${product.productPrice} SEK`;
+    for(let id of ids) {
+        if (id === product.productId) {
+            quantity++;
 
-function loadItems() {
-
-    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    let cart = document.getElementById("cart-items");
-
-
-    if (cartItems === null) {
-        cart.innerHTML = `<h2>No items added!</h2>`
-    } else {
-        for (let item of cartItems) {
-            displayCart(item);
         }
     }
+    quantityOutput.innerText = "Quantity: " + quantity;
 
-
-    function displayCart(product) {
-        let productCard = document.createElement("article");
-        let heading = document.createElement("h3");
-        let description = document.createElement("p");
-        let price = document.createElement("footer");
-        let image = document.createElement("img");
-
-        heading.innerHTML = product.productName;
-        image.setAttribute("src", product.productImageUrl);
-        description.innerHTML = product.productDescription;
-        price.innerHTML = `${product.productPrice} SEK`;
-
-        productCard.appendChild(heading);
-        productCard.appendChild(image);
-        productCard.appendChild(description);
-        productCard.appendChild(price);
-        cart.appendChild(productCard);
-    }
-
-
-
+    productCard.appendChild(heading);
+    productCard.appendChild(image);
+    productCard.appendChild(description);
+    productCard.appendChild(price);
+    productCard.appendChild(quantityOutput);
+    cart.appendChild(productCard);
 }
+
+function noOfOccurences(items) {
+    for(let item of items) {
+           ids.push(item.productId);
+       }
+       ids.sort();
+    for(let i =0; i < ids.length; i++) {
+        if(ids[i] !== prev) {
+            itemId.push(ids[i]);
+            ocurrences.push(1);
+        } else {
+            ocurrences[ocurrences.length-1]++;
+        }
+        prev = ids[i];
+    }
+}
+
+function loadItems() {
+    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    noOfOccurences(cartItems)
+    let display = [];
+
+    if (cartItems === null) {
+        cart.innerHTML = `<h2>Ingen varukorg!</h2>`
+    } else {
+
+        for (let id of itemId) {
+            console.log(itemId)
+            let arr = cartItems.filter(item => item.productId === id);
+            display.push(arr);
+        }
+        console.log(display)
+        for(let i = 0; i < display.length - 1; i++) {
+            console.log(display[i][i])
+            displayCart(display[i][i])
+        }
+    }
+}
+
 loadItems();
