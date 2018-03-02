@@ -1,0 +1,48 @@
+@media (min-width: 480px) and (max-width: 767px) {
+
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.container {
+    border-radius: 5px;
+    background-color: #4D4D4D;
+    padding: 20px;
+    margin: 25%;
+    border: 2px solid #CE885E;
+    color: #CE885E;
+}
+
+
+
+button {
+    background-color: white;
+    color: #CE885E;
+    padding: 12px 20px;
+    border: 1px solid #CE885E;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: grey;
+}

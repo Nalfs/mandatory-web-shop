@@ -4,9 +4,69 @@
     <meta name="keywords" content="test, wireframe, product">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+    <link href="reset.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="styles/product-1.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <title>Title</title>
 </head>
 <body>
+    <header>
 
+        <nav>
+            <ul>
+                <li>
+                    <figure><img src="images/login.png" alt="loginIkon"> LOGGA IN/ REGISTRERA KONTO</figure>
+                </li>
+                <li>
+                    <figure><img src="images/speech.png" alt="speechIkon"> KUNDSERVICE</figure>
+                </li>
+
+                <li>
+                    <a href="product.html">PRODUKTER</a>
+                </li>
+                <li>
+                    <figure><img src="images/cart.png" alt="speechIkon"><a href="checkout.html"> TILL KASSAN (<span id="myNumber"></span>)</a></figure>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <nav id="searching">
+        <div class="searchdiv">
+            <form class="searchform">
+                <input class="searchbar" type="text" name="search" placeholder="Sök..">
+            </form>
+        </div>
+    </nav>
+
+
+
+    <main>
+        <section>
+            <article class="container">
+                <h1>Product 1</h1>
+
+                <form>
+                    <lable for="name">Namn</lable>
+                    <input type="text" id="name" placeholder="Name">
+
+                    <label for="comment">Kommentar</label>
+                    <textarea name="comment" id="comment" placeholder="Skriv kommentar..."></textarea>
+
+                    <button id="btnSubmit" type="button">Skicka</button>
+                    <button id="btnDel" type="button">Master switch</button>
+                </form>
+
+
+            </article>
+        </section>
+        <section id="commentSection">
+
+        </section>
+    </main>
+
+
+    <script src="../scripts/product-1.js"></script>
 </body>
 </html>
