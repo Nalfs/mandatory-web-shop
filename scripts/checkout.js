@@ -8,12 +8,7 @@ let uzipCode = document.getElementById("zip");
 let btnSubmit = document.getElementById("btnSubmit");
 
 let cart = document.getElementById("cart-items");
-
-
-let ids = [], ocurrences = [], itemId = [],  prev;
-
-
-
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 btnSubmit.addEventListener("click",function () {
 
@@ -79,13 +74,8 @@ function displayCart(product) {
     image.setAttribute("src", product.productImageUrl);
     description.innerHTML = product.productDescription;
     price.innerHTML = `${product.productPrice} SEK`;
-    for(let id of ids) {
-        if (id === product.productId) {
-            quantity++;
 
-        }
-    }
-    quantityOutput.innerText = "Quantity: " + quantity;
+    quantityOutput.innerText = "Quantity: " + calculateQuantity(product);
 
     productCard.appendChild(heading);
     productCard.appendChild(image);
@@ -95,42 +85,64 @@ function displayCart(product) {
     cart.appendChild(productCard);
 }
 
-function noOfOccurences(items) {
-    for(let item of items) {
-           ids.push(item.productId);
-       }
-       ids.sort();
-    for(let i =0; i < ids.length; i++) {
-        if(ids[i] !== prev) {
-            itemId.push(ids[i]);
-            ocurrences.push(1);
-        } else {
-            ocurrences[ocurrences.length-1]++;
-        }
-        prev = ids[i];
-    }
+
+//In the below function, items in the cart items array we have loaded from localStorage
+//key is the productId property we are supplying when we call the function
+function removeDuplicatedProducts(items, key) {
+//product: the current product being processed in the array
+//index: the index of the current product being processed in the array
+//items: the cart items loaded from localStorage
+    return items.filter((product, index, items) => {
+
+        console.log("This will return true 3 times, since there are three different products in the cart. " +
+            "It will return false every time the same product is repeated.",
+            items.map(mapObj => mapObj[key]).indexOf(product[key]) === index);
+
+//.map will loop over all the elements in the array and perform the specified action
+//on every element
+        return items.map(mapObj =>
+//for every product we check if the productId for the product has occurred more than
+//once before. The below will return true if the productId has not occurred before and
+//false for all the productId that has occurred before
+            mapObj[key]).indexOf(product[key]) === index;
+    });
+
 }
 
+function calculateQuantity(product) {
+    let quantity = 0;
+    let productIds = [];
+
+    for(let item of cartItems) {
+        productIds.push(item.productId);
+    }
+    for(let id of productIds) {
+        if(product.productId === id) {
+            quantity++;
+        }
+    }
+    return quantity;
+}
+
+
+
+
 function loadItems() {
-    let cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    noOfOccurences(cartItems)
-    let display = [];
+    let cart = document.getElementById("cart-items");
+    let result = removeDuplicatedProducts(cartItems, "productId");
 
     if (cartItems === null) {
-        cart.innerHTML = `<h2>Ingen varukorg!</h2>`
+        cart.innerHTML = `<h2>No items added!</h2>`
     } else {
-
-        for (let id of itemId) {
-            console.log(itemId)
-            let arr = cartItems.filter(item => item.productId === id);
-            display.push(arr);
-        }
-        console.log(display)
-        for(let i = 0; i < display.length - 1; i++) {
-            console.log(display[i][i])
-            displayCart(display[i][i])
+        for (let item of result) {
+            displayCart(item);
         }
     }
 }
 
 loadItems();
+
+
+
+
+
