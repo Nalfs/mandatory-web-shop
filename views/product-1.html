@@ -11,45 +11,60 @@
     <title>Title</title>
 </head>
 <body>
-    <header>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <figure><img src="images/login.png" alt="loginIkon"> LOGGA IN/ REGISTRERA KONTO</figure>
+            </li>
+            <li>
+                <figure><img src="images/speech.png" alt="speechIkon"> KUNDSERVICE</figure>
+            </li>
 
-        <nav>
-            <ul>
-                <li>
-                    <figure><img src="images/login.png" alt="loginIkon"> LOGGA IN/ REGISTRERA KONTO</figure>
-                </li>
-                <li>
-                    <figure><img src="images/speech.png" alt="speechIkon"> KUNDSERVICE</figure>
-                </li>
-
-                <li>
-                    <a href="product.html">PRODUKTER</a>
-                </li>
-                <li>
-                    <figure><img src="images/cart.png" alt="speechIkon"><a href="checkout.html"> TILL KASSAN (<span id="myNumber"></span>)</a></figure>
-                </li>
-            </ul>
-        </nav>
-
-    </header>
-    <nav id="searching">
-        <div class="searchdiv">
-            <form class="searchform">
+            <li>
+                <a href="product.html">PRODUKTER</a>
+            </li>
+            <li>
+                <figure><img src="images/cart.png" alt="speechIkon"><a href="checkout.html">CHECKOUT(<span id="myNumber"></span>)</a></figure>
+            </li>
+            <li>
                 <input class="searchbar" type="text" name="search" placeholder="Sök..">
-            </form>
-        </div>
+            </li>
+        </ul>
     </nav>
+</header>
+
 
 
 
     <main>
+        <section id="info">
+            <article>
+            <h1>Whey 80</h1>
+                <figure><img src="https://www.gymgrossisten.com/media/catalog/product/cache/1/small_image/200x200/9df78eab33525d08d6e5fb8d27136e95/5/8/585-1_1.png" alt="Whey80Protein"></figure>
+            </article>
+            <article>
+                <p>
+                    Nullam vitae feugiat libero. Mauris sit amet malesuada tortor. Suspendisse eu odio varius,
+                    efficitur ligula et, dignissim velit. Aenean sed tincidunt mi. Interdum et malesuada fames
+                    ac ante ipsum primis in faucibus. Nam ultricies ex at diam pretium, ac mollis sem luctus.
+                    Duis et sodales mi, elementum sodales elit. Vivamus porttitor, dui in rhoncus gravida, est ante
+                    auctor ante, eget scelerisque diam mi sed diam. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit. Phasellus et dolor bibendum, imperdiet purus ac, luctus est. Vestibulum ante ipsum primis in
+                    faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus rutrum eros vitae mauris ultrices,
+                    cursus bibendum ex tempor. Suspendisse orci erat, viverra sed erat vel, vestibulum efficitur libero.
+                </p>
+
+            </article>
+            
+        </section>
         <section>
             <article class="container">
-                <h1>Product 1</h1>
+                <h3>Ge omdöme på produkten</h3>
 
                 <form>
                     <lable for="name">Namn</lable>
-                    <input type="text" id="name" placeholder="Name">
+                    <input type="text" id="name" placeholder="Namn">
 
                     <label for="comment">Kommentar</label>
                     <textarea name="comment" id="comment" placeholder="Skriv kommentar..."></textarea>
@@ -61,12 +76,15 @@
 
             </article>
         </section>
+        <h3 id="temp">Recensioner</h3>
         <section id="commentSection">
+
+
 
         </section>
     </main>
 
-
-    <script src="../scripts/product-1.js"></script>
+<script src="../scripts/updateCart.js"></script>
+<script src="../scripts/product-1.js"></script>
 </body>
 </html>

@@ -27,11 +27,22 @@ input[type=submit] {
     border-radius: 5px;
     background-color: #4D4D4D;
     padding: 20px;
-    margin: 25%;
+    margin: 5% 25%;
     border: 2px solid #CE885E;
     color: #CE885E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+#info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 25%;
+}
 
 
 button {
@@ -45,4 +56,11 @@ button {
 
 button:hover {
     background-color: grey;
+}
+
+#commentSection, #temp {
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
