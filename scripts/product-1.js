@@ -32,18 +32,20 @@ $("#btnSubmit").click(function () {
     let sJSONComments = JSON.stringify(arrComments);
 
 
-    //save to sessionStorage
+    //save to Storage
     localStorage.wsComments = sJSONComments;
 
     //retrieve comments from sessionStorage
     giveComment();
+
 });
 
 
 function giveComment() {
-    //get data from sessionStorage
+    //get data from Storage
     let sJSONComments = localStorage.getItem("wsComments");
     console.log("get back"+sJSONComments);
+    $("#commentSection").empty();
 
     //convert from JSON string to object array
     let data =  JSON.parse(localStorage.getItem("wsComments"));
