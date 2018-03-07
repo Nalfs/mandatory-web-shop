@@ -20,6 +20,7 @@ function Comment(txtName,txtComment){
 
 let arrComments = [];
 
+
 $("#btnSubmit").click(function () {
     //Create an object comment
     let newComment = new Comment(input.value,comment.value);
@@ -27,13 +28,11 @@ $("#btnSubmit").click(function () {
     //push in an object array
     arrComments.push(newComment);
 
-
     //convert to JSON string
     let sJSONComments = JSON.stringify(arrComments);
 
-
     //save to Storage
-    localStorage.wsComments = sJSONComments;
+    localStorage.setItem("wsComments", sJSONComments);
 
     //retrieve comments from sessionStorage
     giveComment();
@@ -44,6 +43,7 @@ $("#btnSubmit").click(function () {
 function giveComment() {
     //get data from Storage
     let sJSONComments = localStorage.getItem("wsComments");
+
     console.log("get back"+sJSONComments);
     $("#commentSection").empty();
 
