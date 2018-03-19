@@ -2,13 +2,23 @@ let section = document.getElementById('commentSection');
 let input = document.getElementById('name');
 let comment = document.getElementById('comment');
 
+//keep comments loaded
+let comments = JSON.parse(localStorage.getItem("wsComments")) || [];
+
+//Loop through localstorage
+for(let comment of comments) {
+    const article = document.createElement('article');
+    article.textContent =  comment.name + ' ' + comment.comment;
+    section.appendChild(article);
+}
+
 
 //saving text-section
 const addComments = (name, text) => {
     const article = document.createElement('article');
     article.textContent =  name + ' ' + text;
     section.appendChild(article);
-}
+};
 
 
 
@@ -18,7 +28,6 @@ function Comment(txtName,txtComment){
     this.comment = txtComment;
 }
 
-let arrComments = [];
 
 
 $("#btnSubmit").click(function () {
@@ -26,13 +35,11 @@ $("#btnSubmit").click(function () {
     let newComment = new Comment(input.value,comment.value);
 
     //push in an object array
-    arrComments.push(newComment);
+    comments.push(newComment);
 
-    //convert to JSON string
-    let sJSONComments = JSON.stringify(arrComments);
 
     //save to Storage
-    localStorage.setItem("wsComments", sJSONComments);
+    localStorage.setItem("wsComments", JSON.stringify(comments));
 
     //retrieve comments from sessionStorage
     giveComment();

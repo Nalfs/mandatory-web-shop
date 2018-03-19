@@ -68,7 +68,7 @@ function displayCart(product) {
     let price = document.createElement("footer");
     let image = document.createElement("img");
     let quantityOutput = document.createElement("span");
-    let quantity = 0;
+    let delBtn = document.createElement("button");
 
     heading.innerHTML = product.productName;
     image.setAttribute("src", product.productImageUrl);
@@ -82,6 +82,7 @@ function displayCart(product) {
     productCard.appendChild(description);
     productCard.appendChild(price);
     productCard.appendChild(quantityOutput);
+    productCard.appendChild(delBtn);
     cart.appendChild(productCard);
 }
 
@@ -124,7 +125,12 @@ function calculateQuantity(product) {
     return quantity;
 }
 
+$("delBtn").click(function () {
 
+
+
+
+});
 
 
 function loadItems() {
