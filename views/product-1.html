@@ -61,7 +61,6 @@
         <section>
             <article class="container">
                 <h3>Ge omdöme på produkten</h3>
-
                 <form>
                     <lable for="name">Namn</lable>
                     <input type="text" id="name" placeholder="Namn">
@@ -69,8 +68,16 @@
                     <label for="comment">Kommentar</label>
                     <textarea name="comment" id="comment" placeholder="Skriv kommentar..."></textarea>
 
+                    <label for="score">Ranka din produkt</label>
+                    <span>
+                                        1<input type="radio" name="score" value="1">
+                                        2<input type="radio" name="score" value="2">
+                                        3<input type="radio" name="score" value="3">
+                                        4<input type="radio" name="score" value="4">
+                                        5<input type="radio" name="score" value="5" checked>
+                    </span>
+
                     <button id="btnSubmit" type="button">Skicka</button>
-                    <button id="btnDel" type="button">Master switch</button>
                 </form>
 
 
