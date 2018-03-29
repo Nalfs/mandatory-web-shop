@@ -9,13 +9,16 @@
     <link href="reset.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
 
         .product-btn {
             height:50px;
             width: 150px;
-            background-color: grey;
-            color: white;
+            background-color: white;
+            color: #CE885E;
+            border: 1px solid #CE885E;
             text-align: center;
             vertical-align: middle;
             line-height: 50px;
@@ -23,19 +26,25 @@
             font-weight: bold;
 
         }
+        button:hover {
+            background-color: grey;
+        }
 
 
 
 
         .productItem > span {
              font-weight: bold;
+
          }
 
         main >  p {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+
         }
 
         main > h1 {
@@ -57,6 +66,10 @@
 </head>
 <body>
 <header>
+    <h1>The Tree house</h1>
+    <figure>
+        <img src="images/owl.png" id="headerImg">
+    </figure>
     <nav>
         <ul>
             <li>
@@ -73,7 +86,7 @@
                 <figure><img src="images/cart.png" alt="speechIkon"><a href="checkout.html">CHECKOUT(<span id="myNumber"></span>)</a></figure>
             </li>
             <li>
-                <input id="searchbar" type="text" name="search" placeholder="Sök..">
+                <input id="searchbar" type="text" name="search" placeholder="Sök efter Titlar / Författare / Genre">
             </li>
         </ul>
     </nav>
@@ -91,9 +104,42 @@
 
 </main>
 
+
+<footer>
+    <ul>
+        <li>
+            <ul>
+            Betalning
+                <li>Hos oss betalar du med kort alternativt mot faktura. </li>
+                <li>Alternativ
+                    <figure><img src="images/payment.png" alt="payment logo"></figure></li>
+            </ul>
+        </li>
+        <li>Kontakt
+            <ul>
+                <a href="contacts.html"><li>Kontakt sida</li></a>
+                <li>Kundtjänst</li>
+                <li>Tel: 020 15 10 10</li>
+            </ul>
+        </li>
+        <li>Sociala Medier
+            <ul>
+                <li><a target="_blank" title="find us on Facebook" href="http://www.facebook.com/PLACEHOLDER"><img alt="follow me on facebook" src="//login.create.net/images/icons/user/facebook_30x30.png" border=0></a>
+                    <a href="http://www.facebook.com" >Facebook</a></li>
+                <li> <a target="_blank" title="follow me on instagram" href="http://www.instagram.com/PLACEHOLDER"><img alt="follow me on instagram" src="https://c866088.ssl.cf3.rackcdn.com/assets/instagram30x30.png" border=0></a>
+                    <a href="http://www.instagram.com" >Instagram</a></li>
+                <li>
+                    <a target="_blank" title="follow me on youtube" href="http://www.youtube.com/PLACEHOLDER"><img alt="follow me on youtube" src="https://c866088.ssl.cf3.rackcdn.com/assets/youtube30x30.png" border=0></a>Youtube
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</footer>
+
 <script src="../scripts/product.js"></script>
 <script src="../scripts/shoppingCart.js"></script>
 <script src="../scripts/updateCart.js"></script>
-
+<script src="../scripts/searchWidget.js"></script>
 </body>
 </html>

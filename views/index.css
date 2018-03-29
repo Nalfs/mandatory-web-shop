@@ -1,7 +1,9 @@
-@media (min-width: 480px) and (max-width: 767px) {
 
+
+#headerImg {
+    height: 75px;
+    width: 75px;
 }
-
 
 li > figure > img {
     height: 20px;
@@ -17,6 +19,7 @@ a {
 
 
 h1 {
+    font-family: "Book Antiqua";
     display: block;
     font-size: 2em;
     margin-top: 0.67em;
@@ -42,12 +45,13 @@ header {
     justify-content: center;
     height: 100%;
     width: 100%;
-    background-color: #4D4D4D;
+    background-color: #FF9338;
 
 }
 
+
 #searchbar {
-    width: 100%;
+    width: 600px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -57,7 +61,7 @@ header {
     resize: vertical;
 }
 
-ul > li {
+nav > ul >li {
     margin: 0 100px;
     display:inline-block;
     font-weight: bold;
@@ -75,11 +79,52 @@ ul > li {
 
 .productItem {
     height: 100%;
-    width: 150px;
-    border: 1px solid rgba(185, 84, 25, .7);
+    width: calc(100% * (1/4) - 10px - 1px);
+    /*background-color: #4D4D4D;*/
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border: 2px solid #CE885E;
+    color: black;
     -webkit-background-clip: padding-box; /* for Safari */
     background-clip: padding-box;
     text-align: center;
     padding: 20px;
     border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #FF9338;
+    color: white;
+    position: relative;
+    bottom: 0;
+
+}
+footer > ul > li > ul > li >figure > img{
+    height: 60px;
+    width: 100px;
+}
+
+footer > ul >li a {
+    text-decoration: none;
+    color:white;
+}
+
+
+footer > ul > li {
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-weight: bold;
+}
+footer > ul > li {
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-weight: bold;
+
 }

@@ -65,13 +65,14 @@ function displayCart(product) {
     let productCard = document.createElement("article");
     let heading = document.createElement("h3");
     let description = document.createElement("p");
-    let price = document.createElement("footer");
+    let price = document.createElement("p");
     let image = document.createElement("img");
     let quantityOutput = document.createElement("span");
     let delBtn = document.createElement("button");
 
     heading.innerHTML = product.productName;
     image.setAttribute("src", product.productImageUrl);
+    image.setAttribute('width', '150px');
     description.innerHTML = product.productDescription;
     price.innerHTML = `${product.productPrice} SEK`;
 

@@ -18,7 +18,7 @@ function showProductList(Name, Price, Description, ImageUrl, Id, link) {
     htmlContent += "<p>" + Price + "</p>";
     htmlContent += Description + "<br>";
     htmlContent += "<a href='"+ link + "'><img src='" + ImageUrl + "' class='product-image'>" + "</a><br>";
-    htmlContent += '<button class="product-btn" data-product-id="' + Id + '">' + "KÖP";
+    htmlContent += '<button class="product-btn" data-product-id="' + Id + '">' + "LÄGG I VARUKORG";
     htmlContent += "</button>";
     htmlContent += "</p></div>";
 
@@ -27,11 +27,14 @@ function showProductList(Name, Price, Description, ImageUrl, Id, link) {
 
 }
 
-let objProduct1 = new product("Whey 100","149kr","100% Vassleisolat, av högsta kvalité","https://www.gymgrossisten.com/media/catalog/product/cache/1/image/600x/9df78eab33525d08d6e5fb8d27136e95/5/7/5790_1.png", 100);
-let objProduct2 = new product("Whey 80","129kr","Whey 80, regular, 100% gains","https://www.gymgrossisten.com/media/catalog/product/cache/1/small_image/200x200/9df78eab33525d08d6e5fb8d27136e95/5/8/585-1_1.png", 101, "product-1.html");
-let objProduct3 = new product("Protein Isolate","139kr","Premium Isolate for any and all needs","https://www.gymgrossisten.com/media/catalog/product/cache/1/image/600x/9df78eab33525d08d6e5fb8d27136e95/1/0/100-whey-isolate-1500g-stacker2-europe_1.png", 102);
+let objProduct1 = new product("Book of Mormons","149kr","The gentle journey of a Mormon family","../views/images/bookOne.png", 100);
+let objProduct2 = new product("The One","129kr","The one book to rule them all","../views/images/bookTwo.png", 101, "product-1.html");
+let objProduct3 = new product("Stack of life","139kr","Anything & everything you need to make it","../views/images/bookThree.png", 102);
+let objProduct4 = new product("Stack of life","139kr","Anything & everything you need to make it","../views/images/bookThree.png", 103);
+let objProduct5 = new product("Stack of life","139kr","Anything & everything you need to make it","../views/images/bookThree.png", 103);
+let objProduct6 = new product("Stack of life","139kr","Anything & everything you need to make it","../views/images/bookThree.png", 104);
 
-let arrProducts = [objProduct1,objProduct2,objProduct3];
+let arrProducts = [objProduct1,objProduct2,objProduct3, objProduct4, objProduct5, objProduct6];
 
 
 for (let i = 0; i < arrProducts.length; i++){
