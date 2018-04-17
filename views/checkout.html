@@ -11,6 +11,7 @@
     <link href="index.css" rel="stylesheet">
     <link href="checkout.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
@@ -44,7 +45,7 @@
 </header>
 
 <main>
-    <section>
+    <section id="first">
         <form id="frmUserInfo" action="#">
             <div class="name">
                 <label for="namn" class="required">Namn*<span class="reqForm">(Minst 3 bokstäver)</span></label>
@@ -93,10 +94,10 @@
             <button id="btnSubmit" type="button">Submit</button>
 
         </form>
-        <section id="cart-items">
 
-        </section>
-
+    </section>
+    <section id="cart-items">
+    <p id="temp"></p>
     </section>
 
 

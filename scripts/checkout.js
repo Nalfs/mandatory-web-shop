@@ -8,6 +8,7 @@ let uzipCode = document.getElementById("zip");
 let btnSubmit = document.getElementById("btnSubmit");
 
 let cart = document.getElementById("cart-items");
+let temp = document.getElementById("temp");
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 btnSubmit.addEventListener("click",function () {
@@ -68,6 +69,7 @@ function displayCart(product) {
     let price = document.createElement("p");
     let image = document.createElement("img");
     let quantityOutput = document.createElement("span");
+    let stock = calculateQuantity(product);
     let delBtn = document.createElement("button");
 
     heading.innerHTML = product.productName;
@@ -75,9 +77,18 @@ function displayCart(product) {
     image.setAttribute('width', '150px');
     description.innerHTML = product.productDescription;
     price.innerHTML = `${product.productPrice} SEK`;
+    delBtn.innerHTML = 'sub';
+    delBtn.setAttribute("id", "del-cart");
 
-    quantityOutput.innerText = "Quantity: " + calculateQuantity(product);
+    quantityOutput.innerText = "Quantity: " + stock;
 
+    delBtn.onclick = () => {
+        stock = stock - 1;
+        quantityOutput.innerText = "Quantity: " + stock;
+        subItem(product.productId);
+    displayTotalPrice();
+    };
+    displayTotalPrice();
     productCard.appendChild(heading);
     productCard.appendChild(image);
     productCard.appendChild(description);
@@ -111,6 +122,16 @@ function removeDuplicatedProducts(items, key) {
 
 }
 
+function subItem (productId) {
+    let i;
+    for (i = 0; i < cartItems.length; i++) {
+        if(cartItems[i].productId === productId){
+            cartItems.splice(i,1);
+            break;
+            }
+        }
+}
+
 function calculateQuantity(product) {
     let quantity = 0;
     let productIds = [];
@@ -126,19 +147,13 @@ function calculateQuantity(product) {
     return quantity;
 }
 
-$("delBtn").click(function () {
 
-
-
-
-});
 
 
 function loadItems() {
     let cart = document.getElementById("cart-items");
     let result = removeDuplicatedProducts(cartItems, "productId");
-
-    if (cartItems === null) {
+    if (cartItems.length === 0) {
         cart.innerHTML = `<h2>No items added!</h2>`
     } else {
         for (let item of result) {
@@ -152,4 +167,11 @@ loadItems();
 
 
 
+function displayTotalPrice(){
+    let sum = 0;
+    cartItems.forEach(function(value, index, arry){
+        sum += parseFloat(value.productPrice);
+    });
+    temp.innerHTML = `<h2>Varukorg</h2>` + "<br>" + 'Total price is: ' + sum + ' SEK';
+}
 
